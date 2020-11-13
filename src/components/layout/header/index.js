@@ -1,14 +1,10 @@
 import React from 'react';
+import styles from './styles';
 
-export default function Header() {
-  return (
-    <header
-      style={{
-        borderBottom: `1px solid #efefef`,
-        padding: '16px',
-      }}
-    >
-      <img src="./logo.svg" alt="match" width="110" />
-    </header>
-  );
-}
+const Header = () => (
+  <header style={styles.header}>
+    <img src="./logo.svg" alt="match" width="110" />
+  </header>
+);
+
+export default Header;
