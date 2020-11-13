@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { ProfileContext } from '../../core/context/ProfilesContextProvider';
 import MinimalButton from '../../components/shared/minimal-button';
-import Header from '../../components/layout/header';
 import SearchCard from '../../components/search/card';
 import styles from './styles';
 
@@ -19,8 +18,6 @@ const SearchPage = () => {
 
   return (
     <>
-      <Header />
-
       <main style={styles.main}>
         <div style={styles.filterContainer}>
           <MinimalButton disabled>
@@ -40,6 +37,7 @@ const SearchPage = () => {
           {profiles.map((profile) => (
             <SearchCard
               key={profile.id}
+              id={profile.id}
               photoUrl={profile.photoUrl}
               handle={profile.handle}
               location={profile.location}

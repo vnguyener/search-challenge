@@ -1,11 +1,12 @@
 import React from 'react';
-import Header from '../../components/layout/header';
+import { useParams } from 'react-router-dom';
 
 const ProfilePage = () => {
+  const params = useParams();
+  const { id } = params;
   return (
     <>
-      <Header />
-      <p>profile placeholder</p>
+      <p>profile placeholder for profile {id}</p>
     </>
   );
 };
