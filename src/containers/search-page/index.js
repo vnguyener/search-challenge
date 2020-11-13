@@ -18,7 +18,7 @@ const SearchPage = () => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Header />
 
       <main style={styles.main}>
@@ -49,7 +49,7 @@ const SearchPage = () => {
           ))}
         </div>
       </main>
-    </React.Fragment>
+    </>
   );
 };
 
