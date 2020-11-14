@@ -20,7 +20,7 @@ const SearchCard = ({
   return (
     <div style={styles.card}>
       <div style={styles.boxShadow}>
-        <div className="search-card-avatar" style={styles.avatar} onClick={() => goToProfile(id)}>
+        <div className="clickable" style={styles.avatar} onClick={() => goToProfile(id)}>
           <img src={photoUrl} alt="potential date"></img>
           <div
             style={{
