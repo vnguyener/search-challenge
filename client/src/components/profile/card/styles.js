@@ -6,7 +6,7 @@ const darknavy = '#343633';
 const styles = {
   card: {
     backgroundColor: '#fff',
-    borderRadius: '2px',
+    borderRadius: '8px',
     margin: '0 auto',
     maxWidth: '340px',
     boxShadow:
@@ -70,6 +70,8 @@ const styles = {
     maxWidth: '100%',
     width: '100%',
     height: 'auto',
+    borderTopLeftRadius: '8px',
+    borderTopRightRadius: '8px',
   },
 };
 
