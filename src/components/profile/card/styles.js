@@ -20,6 +20,12 @@ const styles = {
     bottom: '3px',
     left: '10px',
   },
+  photoDescription: {
+    position: 'absolute',
+    bottom: '15px',
+    right: '15px',
+    color: '#FFF',
+  },
   content: {
     padding: '1px 10px',
   },

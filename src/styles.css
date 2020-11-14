@@ -34,3 +34,20 @@ body {
 .clickable {
   cursor: pointer;
 }
+
+.icon-badge {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ea6c6c;
+  position: absolute;
+  right: 5px;
+  bottom: 15px;
+  color: #FFF;
+  text-align: center;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  place-content: center;
+  font-weight: 700;
+}

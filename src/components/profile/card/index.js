@@ -14,6 +14,14 @@ const ProfileCard = ({ profile }) => {
           </p>
         </div>
       </div>
+      {profile.photoCount > 0 && (
+        <div style={styles.header} class="clickable">
+          <span style={styles.photoDescription} className="material-icons">
+            photo_library
+          </span>
+          <p className="icon-badge">{profile.photoCount}</p>
+        </div>
+      )}
       <div style={styles.content}>
         <h2 style={styles.heading}>
           <p style={styles.link}>{profile.handle}</p>
