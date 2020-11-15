@@ -15,7 +15,7 @@ const ProfileCard = ({ profile }) => {
         </div>
       </div>
       {profile.photoCount > 0 && (
-        <div style={styles.header} class="clickable">
+        <div style={styles.header} className="clickable">
           <span style={styles.photoDescription} className="material-icons">
             photo_library
           </span>

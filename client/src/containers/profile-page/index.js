@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { push } from 'connected-react-router';
+import { getSelectedProfile } from '../../core/store/actions/profiles';
 import ProfileCard from '../../components/profile/card';
-import profiles from '../../profiles.json';
 import styles from './styles';
 
 const ProfilePage = () => {
   const params = useParams();
-  const history = useHistory();
+  const dispatch = useDispatch();
 
-  const [selectedProfile, setSelectedProfile] = useState(null);
+  const selectedProfile = useSelector((state) => state.profiles.selectedProfile);
   const { id } = params;
 
   useEffect(() => {
-    const profile = profiles.find((p) => p.id === parseInt(id));
-    setSelectedProfile(profile);
-  }, [id]);
+    dispatch(getSelectedProfile(id));
+  }, [dispatch, id]);
 
   const goToSearchPage = () => {
-    history.push('/');
+    dispatch(push('/'));
   };
 
   return (

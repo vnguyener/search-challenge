@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SET_PROFILES_LIST, SET_SELECTED_PROFILE } from '../reducers/profiles';
+import { SET_PROFILES_LIST, SET_SELECTED_PROFILE, SORT_PROFILES } from '../reducers/profiles';
 
 export const getProfilesList = () => async (dispatch) => {
   try {
@@ -32,3 +32,8 @@ export const getSelectedProfile = (profileId) => async (dispatch) => {
     // todo throw error snackbar
   }
 };
+
+export const sortProfileList = (sortDirection) => ({
+  type: SORT_PROFILES,
+  sort: sortDirection,
+});

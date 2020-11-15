@@ -1,5 +1,6 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { push } from 'connected-react-router';
 
 import styles from './styles';
 
@@ -11,10 +12,10 @@ const SearchCard = ({
   photoCount = 0,
   id = 0,
 }) => {
-  const history = useHistory();
+  const dispatch = useDispatch();
 
   const goToProfile = (id) => {
-    history.push(`/profile/${id}`);
+    dispatch(push(`/profile/${id}`));
   };
 
   return (

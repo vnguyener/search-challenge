@@ -1,19 +1,24 @@
-import React, { useContext } from 'react';
-import { ProfileContext } from '../../core/context/ProfilesContextProvider';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProfilesList, sortProfileList } from '../../core/store/actions/profiles';
 import MinimalButton from '../../components/shared/minimal-button';
 import SearchCard from '../../components/search/card';
 import styles from './styles';
 
 const SearchPage = () => {
-  const context = useContext(ProfileContext);
-  const { profiles } = context;
+  const dispatch = useDispatch();
+  const profiles = useSelector((state) => state.profiles.profilesList);
+
+  useEffect(() => {
+    dispatch(getProfilesList());
+  }, [dispatch]);
 
   const handleSortAscending = () => {
-    context.dispatch({ type: 'ascending' });
+    dispatch(sortProfileList('ascending'));
   };
 
   const handleSortDescending = () => {
-    context.dispatch({ type: 'descending' });
+    dispatch(sortProfileList('descending'));
   };
 
   return (
@@ -34,17 +39,21 @@ const SearchPage = () => {
         </div>
 
         <div style={styles.profilesContainer}>
-          {profiles.map((profile) => (
-            <SearchCard
-              key={profile.id}
-              id={profile.id}
-              photoUrl={profile.photoUrl}
-              handle={profile.handle}
-              location={profile.location}
-              age={profile.age}
-              photoCount={profile.photoCount}
-            />
-          ))}
+          {profiles && profiles.length > 0 ? (
+            profiles.map((profile) => (
+              <SearchCard
+                key={profile.id}
+                id={profile.id}
+                photoUrl={profile.photoUrl}
+                handle={profile.handle}
+                location={profile.location}
+                age={profile.age}
+                photoCount={profile.photoCount}
+              />
+            ))
+          ) : (
+            <p>no results</p>
+          )}
         </div>
       </main>
     </>
