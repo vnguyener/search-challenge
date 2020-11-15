@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
+const { db } = require('./models');
 const { logger, log } = require('./logger');
 const app = express();
 const port = process.env.PORT || 8080;
@@ -24,6 +25,9 @@ app.use(
 
 //configure routes
 require('./routes')(app);
+
+// initialize "models", setting data to "cache"
+db.initialize();
 
 // listening
 app.listen(port, () => console.log(`Server magic happens on port - ${port}`));

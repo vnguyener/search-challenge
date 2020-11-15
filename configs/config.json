@@ -1,0 +1,20 @@
+{
+  "development": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "data": {
+      "profiles": {
+        "ttl": 1
+      }
+    }
+  },
+  "test": {
+    "host": "127.0.0.1",
+    "port": 8081,
+    "data": {
+      "profiles": {
+        "ttl": 1
+      }
+    }
+  }
+}
