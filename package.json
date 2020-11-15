@@ -6,6 +6,7 @@
   "private": true,
   "scripts": {
     "server": "cd server && yarn server",
-    "web": "cd client && yarn start"
+    "web": "cd client && yarn start",
+    "build:local": "cd server && yarn && cd ../client && yarn"
   }
 }
