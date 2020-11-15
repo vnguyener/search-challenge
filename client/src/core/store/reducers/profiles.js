@@ -14,7 +14,6 @@ const profilesReducer = (state = initialState, action) => {
     case SET_SELECTED_PROFILE:
       return { ...state, selectedProfile: action.profile };
     case SORT_PROFILES: {
-      console.log('state', state);
       let sortedProfiles = [...state.profilesList];
 
       if (action.sort === 'ascending') {
