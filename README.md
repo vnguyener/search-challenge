@@ -9,9 +9,9 @@ This repo contains the source code to do the following tasks:
 ## Shortcuts
 
 * [Getting Started](#getting-started)
-* [Initial Run Logs](#initial-run-logs)
+* [Initial Run Logs](#initial-run-logs-on-running-server)
 * [Architecture Overview](#architecture-overview)
-* [Concepts & Thoughts](#concepts-&-thoughts)
+* [Concepts & Thoughts](#concepts--thoughts)
 
 ## Getting Started 
 
