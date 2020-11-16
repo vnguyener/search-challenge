@@ -37,7 +37,7 @@ There are a couple commands to choose from within the root `package.json` after 
 
 ### Other Commands
 
-I've added a few tests to both `/server` and `/client` both can be ran through `yarn test` or (`yarn jest` in `/client) in the respective directories
+I've added a few tests to both `/server` and `/client` both can be ran through `yarn test` or (`yarn test` then press `a` in `/client) in the respective directories
 
 ## Initial run logs on running server
 
