@@ -10,9 +10,8 @@ Shortcuts
 
 * [Getting Started](#getting-started)
 * [Initial Run Logs](#initial-run-logs)
-* [Testing API](#testing-api)
-* [API Overview](#api-overview)
 * [Architecture Overview](#architecture-overview)
+* [Concepts & Thoughts](#concepts-&-thoughts)
 
 ## Getting Started 
 
