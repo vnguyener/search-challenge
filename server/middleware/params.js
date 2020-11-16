@@ -9,7 +9,7 @@ const validateParams = (req, res, next) => {
   const extractedErrors = [];
   errors.array().map((err) => extractedErrors.push({ [err.param]: err.msg }));
 
-  return res.status(422).json({
+  return res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
     httpStatus: httpStatus.UNPROCESSABLE_ENTITY,
     error: 'Validation error(s) has occurred.',
     validationErrors: extractedErrors,

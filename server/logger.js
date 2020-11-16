@@ -1,3 +1,6 @@
+///
+// Configuring our winston logging for local error logs
+///
 const path = require('path');
 const fs = require('fs');
 const appRoot = require('app-root-path');
