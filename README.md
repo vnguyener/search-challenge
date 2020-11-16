@@ -37,7 +37,7 @@ There are a couple commands to choose from within the root `package.json` after 
 
 ### Other Commands
 
-I've added a few tests to both `/server` and `/client` both can be ran through `yarn test` in the respective directories
+I've added a few tests to both `/server` and `/client` both can be ran through `yarn test` or (`yarn jest` in `/client) in the respective directories
 
 ## Initial run logs on running server
 
@@ -132,3 +132,4 @@ _Note: Though this should only be for this particular instance, would rather use
   * I refactored the original/base repo so things would look more consistent throughout -- moving around styling, componenents
   * I went ahead and removed the original context provider in favor of redux to separate concerns a bit more
   * Testing - I've only added simple snapshot testing for components and containers; I would also like to have reducer/actions tests if time permitted.
+  * I've also added a few touches such as skeletons if the web app runs on a slower network, basic error handling, and a 404.
