@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search page container renders correctly 1`] = `
+<main
+  className="search-page-container"
+>
+  <div
+    className="filter-container"
+  >
+    <button
+      className="minimal-button"
+      disabled={true}
+      style={Object {}}
+    >
+      <img
+        alt="filter"
+        src="filter.svg"
+        width={22}
+      />
+    </button>
+    <button
+      className="minimal-button"
+      disabled={true}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <img
+        alt="Sort ascending"
+        src="./ascending.svg"
+        width={22}
+      />
+    </button>
+    <button
+      className="minimal-button"
+      disabled={true}
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <img
+        alt="Sort descending"
+        src="./descending.svg"
+        width={22}
+      />
+    </button>
+  </div>
+  <div
+    className="profiles-container"
+  />
+  <p
+    className="no-results"
+  >
+    We're sorry, but there are no results to show.
+  </p>
+</main>
+`;

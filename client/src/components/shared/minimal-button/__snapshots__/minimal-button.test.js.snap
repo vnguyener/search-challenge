@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`minimal button component renders correctly 1`] = `
+<button
+  className="minimal-button"
+  style={Object {}}
+/>
+`;

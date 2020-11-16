@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`search card component renders correctly 1`] = `
+<div
+  className="search-card"
+>
+  <div
+    className="box-shadow"
+  >
+    <div
+      className="avatar clickable"
+      onClick={[Function]}
+    >
+      <img
+        alt="potential date"
+        src=""
+      />
+      <div
+        style={
+          Object {
+            "borderRadius": "inherit",
+            "bottom": "0",
+            "overflow": "hidden",
+            "position": "absolute",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "display": "flex",
+              "justifyContent": "space-between",
+              "margin": 8,
+              "position": "relative",
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "color": "white",
+                "display": "flex",
+                "flexDirection": "column",
+                "width": "100%",
+              }
+            }
+          >
+            <h6
+              style={
+                Object {
+                  "fontSize": "16px ",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "marginBottom": "4px",
+                  }
+                }
+              >
+                
+              </div>
+            </h6>
+            <div
+              style={
+                Object {
+                  "alignItems": "baseline",
+                  "display": "flex",
+                  "justifyContent": "space-between",
+                }
+              }
+            >
+              <div
+                style={
+                  Object {
+                    "alignItems": "center",
+                    "display": "flex",
+                    "marginBottom": "4px",
+                  }
+                }
+              >
+                <span>
+                  99
+                </span>
+              </div>
+              <div
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": "15px",
+                  }
+                }
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

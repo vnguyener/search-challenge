@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`not found container renders correctly 1`] = `
+<main
+  className="not-found-container"
+>
+  <h2>
+    404
+  </h2>
+  <p>
+    Oops, looks like you're lost.
+  </p>
+  <button
+    className="minimal-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "border": "1px solid",
+        "borderRadius": "8px",
+        "padding": "12px",
+        "textTransform": "uppercase",
+      }
+    }
+  >
+    Back to Results
+  </button>
+</main>
+`;

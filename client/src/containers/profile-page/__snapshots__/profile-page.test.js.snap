@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile page container renders correctly 1`] = `
+<main
+  className="profile-container"
+>
+  <div
+    className="back-button clickable"
+    onClick={[Function]}
+  >
+    <span
+      className="material-icons"
+    >
+      keyboard_arrow_left
+    </span>
+     
+    <p>
+      Back
+    </p>
+  </div>
+  <div
+    className="card-container"
+  >
+    <img
+      alt="Profile Main"
+      className="resp-media"
+      src="https://placeimg.com/200/200/people?id=1"
+    />
+    <div
+      className="header-context-container"
+    >
+      <div
+        className="description"
+      >
+        <p
+          className="label"
+        >
+          24
+           · 
+          dallas
+        </p>
+      </div>
+    </div>
+    <div
+      className="body-context-container"
+    >
+      <h2
+        className="body-header"
+      >
+        <p
+          className="link"
+        >
+          dave
+        </p>
+      </h2>
+    </div>
+  </div>
+</main>
+`;

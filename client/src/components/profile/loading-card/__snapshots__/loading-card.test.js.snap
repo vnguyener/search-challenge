@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile loading card component renders correctly 1`] = `
+<div
+  className="loading-card-container"
+>
+  <div
+    className="MuiPaper-root MuiCard-root loading-card MuiPaper-elevation1 MuiPaper-rounded"
+  >
+    <span
+      className="MuiSkeleton-root MuiSkeleton-rect loading-card-media MuiSkeleton-wave"
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    />
+    <div
+      className="MuiCardContent-root"
+    >
+      <span
+        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+        style={
+          Object {
+            "height": 10,
+            "marginBottom": 6,
+            "width": undefined,
+          }
+        }
+      />
+      <span
+        className="MuiSkeleton-root MuiSkeleton-text MuiSkeleton-wave"
+        style={
+          Object {
+            "height": 10,
+            "width": "80%",
+          }
+        }
+      />
+    </div>
+  </div>
+</div>
+`;
