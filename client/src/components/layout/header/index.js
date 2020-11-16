@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './styles';
+import './styles.scss';
 
 const Header = () => (
-  <header style={styles.header}>
+  <header className="main-header">
     <img src="./logo.svg" alt="match" width="110" />
   </header>
 );

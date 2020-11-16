@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { push } from 'connected-react-router';
 import { getSelectedProfile, setSelectedProfile } from '../../core/store/actions/profiles';
 import ProfileCard from '../../components/profile/card';
-import styles from './styles';
+import './styles.scss';
 
 const ProfilePage = () => {
   const params = useParams();
@@ -27,16 +27,14 @@ const ProfilePage = () => {
   };
 
   return (
-    <>
-      <div className="clickable" style={styles.backButton} onClick={goToSearchPage}>
-        <span className="material-icons" style={styles.icon}>
-          keyboard_arrow_left
-        </span>
+    <main className="profile-container">
+      <div className="back-button clickable" onClick={goToSearchPage}>
+        <span className="material-icons">keyboard_arrow_left</span>
         &nbsp;
         <p>Back</p>
       </div>
       <ProfileCard profile={selectedProfile} />
-    </>
+    </main>
   );
 };
 

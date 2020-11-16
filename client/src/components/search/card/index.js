@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 
-import styles from './styles';
+import './styles.scss';
 
 const SearchCard = ({
   photoUrl = '',
@@ -19,9 +19,9 @@ const SearchCard = ({
   };
 
   return (
-    <div style={styles.card}>
-      <div style={styles.boxShadow}>
-        <div className="clickable" style={styles.avatar} onClick={() => goToProfile(id)}>
+    <div className="search-card">
+      <div className="box-shadow">
+        <div className="avatar clickable" onClick={() => goToProfile(id)}>
           <img src={photoUrl} alt="potential date"></img>
           <div
             style={{

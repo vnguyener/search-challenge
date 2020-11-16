@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Header from './components/layout/header';
-import './styles.css';
+import './styles.scss';
 
 // pages
 import { SearchPage, ProfilePage, NotFoundPage } from './containers';

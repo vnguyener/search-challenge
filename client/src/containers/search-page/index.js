@@ -4,7 +4,7 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import { getProfilesList, sortProfileList } from '../../core/store/actions/profiles';
 import MinimalButton from '../../components/shared/minimal-button';
 import SearchCard from '../../components/search/card';
-import styles from './styles';
+import './styles.scss';
 
 const SearchPage = () => {
   const dispatch = useDispatch();
@@ -25,32 +25,32 @@ const SearchPage = () => {
 
   return (
     <>
-      <main style={styles.main}>
-        <div style={styles.filterContainer}>
+      <main className="search-page-container">
+        <div className="filter-container">
           <MinimalButton disabled>
             <img src="filter.svg" width={22} alt="filter" />
           </MinimalButton>
 
           <MinimalButton
             onClick={handleSortAscending}
-            disabled={!isListLoading || !profiles || profiles.length === 0}
+            disabled={isListLoading || !profiles || profiles.length === 0}
           >
             <img src="./ascending.svg" width={22} alt="Sort ascending" />
           </MinimalButton>
 
           <MinimalButton
             onClick={handleSortDescending}
-            disabled={!isListLoading || !profiles || profiles.length === 0}
+            disabled={isListLoading || !profiles || profiles.length === 0}
           >
             <img src="./descending.svg" width={22} alt="Sort descending" />
           </MinimalButton>
         </div>
 
-        <div style={styles.profilesContainer}>
+        <div className="profiles-container">
           {isListLoading &&
             [...new Array(10)].map((item, index) => (
-              <div style={styles.skeletonContainer}>
-                <Skeleton key={index} style={styles.skeleton} />
+              <div key={index} className="skeleton-container">
+                <Skeleton className="skeleton" />
               </div>
             ))}
           {!isListLoading &&
@@ -69,7 +69,7 @@ const SearchPage = () => {
             ))}
         </div>
         {!isListLoading && (!profiles || profiles.length === 0) && (
-          <p style={styles.noResults}>We're sorry, but there are no results to show.</p>
+          <p className="no-results">We're sorry, but there are no results to show.</p>
         )}
       </main>
     </>

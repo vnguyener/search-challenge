@@ -1,30 +1,28 @@
 import React from 'react';
-import styles from './styles';
+import './styles.scss';
 
 const ProfileCard = ({ profile }) => {
   if (!profile) return null;
 
   return (
-    <div style={styles.card}>
-      <img style={styles.img} src={profile.photoUrl} alt="Profile Main" />
-      <div style={styles.header}>
-        <div style={styles.description}>
-          <p style={styles.label}>
+    <div className="card-container">
+      <img className="resp-media" src={profile.photoUrl} alt="Profile Main" />
+      <div className="header-context-container">
+        <div className="description">
+          <p className="label">
             {profile.age} &#xb7; {profile.location || 'N/A'}
           </p>
         </div>
       </div>
       {profile.photoCount > 0 && (
-        <div style={styles.header} className="clickable">
-          <span style={styles.photoDescription} className="material-icons">
-            photo_library
-          </span>
+        <div className="header-context-container clickable">
+          <span className="photo-description material-icons">photo_library</span>
           <p className="icon-badge">{profile.photoCount}</p>
         </div>
       )}
-      <div style={styles.content}>
-        <h2 style={styles.heading}>
-          <p style={styles.link}>{profile.handle}</p>
+      <div className="body-context-container">
+        <h2 className="body-header">
+          <p className="link">{profile.handle}</p>
         </h2>
       </div>
     </div>

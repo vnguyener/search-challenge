@@ -1,0 +1,18 @@
+.search-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box-shadow {
+    border: 1px solid lightgray;
+    border-radius: 8;
+    box-shadow: 0 3px 6px lightgray, 0 3px 6px;
+    overflow: hidden;
+
+    .avatar {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    };
+  };
+};
