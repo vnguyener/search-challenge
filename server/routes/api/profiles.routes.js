@@ -1,6 +1,7 @@
 const express = require('express');
 const { param } = require('express-validator');
 const httpStatus = require('http-status');
+const { http } = require('winston');
 const { profiles } = require('../../models');
 const { profilesMiddleware } = require('./middleware');
 const router = express.Router();
@@ -34,17 +35,17 @@ async function getProfilesList(req, res) {
   try {
     const profilesList = await profiles.getProfilesList();
 
-
     return res
-    .status(200)
-    .json({ success: true, httpStatus: httpStatus.OK, profiles: profilesList });
+      .status(httpStatus.OK)
+      .json({ success: true, httpStatus: httpStatus.OK, profiles: profilesList });
 
   } catch (err) {
-    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
-      success: true,
-      httpStatus: httpStatus.INTERNAL_SERVER_ERROR,
-      message: err && err.message ? err.message : 'Unexpected error has occurred.',
-    });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR)
+      .json({
+        success: false,
+        httpStatus: httpStatus.INTERNAL_SERVER_ERROR,
+        message: err && err.message ? err.message : 'Unexpected error has occurred.',
+      });
   }
 };
 
@@ -58,7 +59,7 @@ async function getProfileDetails (req, res) {
       return res.status(httpStatus.NOT_FOUND).json({
         success: false,
         httpStatus: httpStatus.NOT_FOUND,
-        error: `Profile could not be found with the requested id (${id})`,
+        error: `Sorry, we're unable to find the profile you're looking for.`,
       });
     } else {
       return res.status(httpStatus.OK).json({
@@ -71,7 +72,7 @@ async function getProfileDetails (req, res) {
 
   } catch (err) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
-      success: true,
+      success: false,
       httpStatus: httpStatus.INTERNAL_SERVER_ERROR,
       message: err && err.message ? err.message : 'Unexpected error has occurred.',
     });

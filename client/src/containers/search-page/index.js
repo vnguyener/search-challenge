@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Skeleton from '@material-ui/lab/Skeleton';
+import Alert from '@material-ui/lab/Alert';
 import { getProfilesList, sortProfileList } from '../../core/store/actions/profiles';
 import MinimalButton from '../../components/shared/minimal-button';
 import SearchCard from '../../components/search/card';
@@ -10,6 +11,7 @@ const SearchPage = () => {
   const dispatch = useDispatch();
   const profiles = useSelector((state) => state.profiles.profilesList);
   const isListLoading = useSelector((state) => state.profiles.isListLoading);
+  const profilesListError = useSelector((state) => state.profiles.profilesListError);
 
   useEffect(() => {
     dispatch(getProfilesList());
@@ -45,6 +47,7 @@ const SearchPage = () => {
             <img src="./descending.svg" width={22} alt="Sort descending" />
           </MinimalButton>
         </div>
+        {profilesListError && <Alert severity="error">{profilesListError}</Alert>}
 
         <div className="profiles-container">
           {isListLoading &&

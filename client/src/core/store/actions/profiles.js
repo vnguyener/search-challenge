@@ -4,6 +4,8 @@ import {
   SET_SELECTED_PROFILE,
   SORT_PROFILES,
   SET_IS_PROFILE_LIST_LOADING,
+  SET_SELECTED_PROFILE_ERROR,
+  SET_IS_PROFILE_LOADING,
 } from '../reducers/profiles';
 
 export const getProfilesList = () => async (dispatch) => {
@@ -15,26 +17,37 @@ export const getProfilesList = () => async (dispatch) => {
         type: SET_PROFILES_LIST,
         profiles: res.data.profiles,
       });
-    } else {
-      // todo throw error snackbar
     }
     dispatch(setIsProfileListLoading(false));
-  } catch (e) {
-    // todo throw error snackbar
+  } catch (err) {
     dispatch(setIsProfileListLoading(false));
+    dispatch({
+      type: SET_SELECTED_PROFILE_ERROR,
+      error: err.response?.data?.error || 'Unexpected error has occurred.',
+    });
   }
 };
 
 export const getSelectedProfile = (profileId) => async (dispatch) => {
+  dispatch(setIsProfileLoading(true));
+  dispatch({
+    type: SET_SELECTED_PROFILE_ERROR,
+    error: null,
+  });
+
   try {
     const res = await axios.get(`/api/profiles/${profileId}`);
     if (res.data && res.data.profile) {
       dispatch(setSelectedProfile(res.data.profile));
-    } else {
-      // todo throw error snackbar
     }
-  } catch (e) {
-    // todo throw error snackbar
+    dispatch(setIsProfileLoading(false));
+  } catch (err) {
+    dispatch(setIsProfileLoading(false));
+
+    dispatch({
+      type: SET_SELECTED_PROFILE_ERROR,
+      error: err.response?.data?.error || 'Unexpected error has occurred.',
+    });
   }
 };
 
@@ -51,4 +64,9 @@ export const setSelectedProfile = (profile) => ({
 export const setIsProfileListLoading = (isLoading) => ({
   type: SET_IS_PROFILE_LIST_LOADING,
   isListLoading: isLoading,
+});
+
+export const setIsProfileLoading = (isLoading) => ({
+  type: SET_IS_PROFILE_LOADING,
+  isProfileLoading: isLoading,
 });

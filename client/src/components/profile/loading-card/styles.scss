@@ -1,0 +1,14 @@
+.loading-card-container {
+  display: flex;
+  justify-content: center;
+
+  .loading-card {
+    max-width: 345px;
+    margin: 50px;
+  
+    .loading-card-media {
+      height: 250px;
+      width: 340px;
+    };
+  };
+}
