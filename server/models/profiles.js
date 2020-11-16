@@ -22,7 +22,7 @@ class Profiles extends SimpleCache {
 
       try {
         const profilesData = mockData;
-        log('info', 'profiles data - setting data to memory from request response');
+        log('info', 'profiles data - setting data to memory');
         this.cache = profilesData;
         this.fetchDate = new Date();
         return Promise.resolve(this.cache);

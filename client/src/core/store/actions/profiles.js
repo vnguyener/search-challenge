@@ -4,13 +4,18 @@ import {
   SET_SELECTED_PROFILE,
   SORT_PROFILES,
   SET_IS_PROFILE_LIST_LOADING,
-  SET_SELECTED_PROFILE_ERROR,
   SET_IS_PROFILE_LOADING,
+  SET_SELECTED_PROFILE_ERROR,
+  SET_PROFILES_LIST_ERROR,
 } from '../reducers/profiles';
 
 export const getProfilesList = () => async (dispatch) => {
+  dispatch(setIsProfileListLoading(true));
+  dispatch({
+    type: SET_PROFILES_LIST_ERROR,
+    error: null,
+  });
   try {
-    dispatch(setIsProfileListLoading(true));
     const res = await axios.get(`/api/profiles`);
     if (res.data && res.data.profiles) {
       dispatch({
@@ -22,7 +27,7 @@ export const getProfilesList = () => async (dispatch) => {
   } catch (err) {
     dispatch(setIsProfileListLoading(false));
     dispatch({
-      type: SET_SELECTED_PROFILE_ERROR,
+      type: SET_PROFILES_LIST_ERROR,
       error: err.response?.data?.error || 'Unexpected error has occurred.',
     });
   }
