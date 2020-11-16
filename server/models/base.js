@@ -3,7 +3,7 @@ const { log } = require('../logger');
 class SimpleCache {
   constructor(timeToLive = 1) {
     // cache ttl in minutes
-    this.url = "";
+    this.url = '';
     this.millisecondsToLive = timeToLive * 60 * 1000;
     this.cache = null;
     this.getData = this.getData.bind(this);
@@ -16,9 +16,7 @@ class SimpleCache {
   // Checks if the cache is expired if the ttl is less then current time
   ///
   isCacheExpired() {
-    return (
-      this.fetchDate.getTime() + this.millisecondsToLive < new Date().getTime()
-    );
+    return this.fetchDate.getTime() + this.millisecondsToLive < new Date().getTime();
   }
 
   ///
@@ -26,7 +24,7 @@ class SimpleCache {
   ///
   isCacheInvalid() {
     const isInvalid = !this.cache || this.isCacheExpired();
-    log("info", `isCacheInvalid - ${isInvalid}`);
+    log('info', `isCacheInvalid - ${isInvalid}`);
     return isInvalid;
   }
 

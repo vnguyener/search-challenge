@@ -1,7 +1,6 @@
 const express = require('express');
 const { param } = require('express-validator');
 const httpStatus = require('http-status');
-const { http } = require('winston');
 const { profiles } = require('../../models');
 const { profilesMiddleware } = require('./middleware');
 const router = express.Router();
@@ -11,11 +10,7 @@ const router = express.Router();
 //   GET: "/:id" - Returns profile information given the id
 ///
 
-router.get(
-  '',
-  profilesMiddleware.getProfilesList,
-  getProfilesList
-)
+router.get('', profilesMiddleware.getProfilesList, getProfilesList);
 
 router.get(
   '/:id',
@@ -38,18 +33,16 @@ async function getProfilesList(req, res) {
     return res
       .status(httpStatus.OK)
       .json({ success: true, httpStatus: httpStatus.OK, profiles: profilesList });
-
   } catch (err) {
-    return res.status(httpStatus.INTERNAL_SERVER_ERROR)
-      .json({
-        success: false,
-        httpStatus: httpStatus.INTERNAL_SERVER_ERROR,
-        message: err && err.message ? err.message : 'Unexpected error has occurred.',
-      });
+    return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
+      success: false,
+      httpStatus: httpStatus.INTERNAL_SERVER_ERROR,
+      message: err && err.message ? err.message : 'Unexpected error has occurred.',
+    });
   }
-};
+}
 
-async function getProfileDetails (req, res) {
+async function getProfileDetails(req, res) {
   const { id } = req.params;
 
   try {
@@ -68,8 +61,6 @@ async function getProfileDetails (req, res) {
         profile,
       });
     }
-
-
   } catch (err) {
     return res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
       success: false,
