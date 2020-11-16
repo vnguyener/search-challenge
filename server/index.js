@@ -30,4 +30,8 @@ require('./routes')(app);
 db.initialize();
 
 // listening
-app.listen(port, () => console.log(`Server magic happens on port - ${port}`));
+if (process.env.NODE_ENV != 'test') {
+  app.listen(port, () => console.log(`Server magic happens on port - ${port}`));
+}
+
+module.exports = app;
