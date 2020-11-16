@@ -22,7 +22,7 @@ This repo contains the source code to do the following tasks:
 
 ### Installation
 
-1. git clone https://github.com/vnguyener/search-challenge.git1
+1. git clone https://github.com/vnguyener/search-challenge.git
 2. cd into the project; there should be a 'root' package.json to build and run the server and the web app
 3. Running `yarn build:all` should install both `/server` and `/client` dependencies
 
@@ -129,7 +129,7 @@ _Note: Though this should only be for this particular instance, would rather use
     * Usually, I would want to implement a separate service to request or maybe even poll data from these endpoints to store in a db/cache which this api would hit
   * `Loggers` - Winston and Morgan provide great resources for internal logging and request logging. Any errors on request (e.g. if there are no headers) will be logged in the log files. You will also see it in the terminal output.
 * Client
-  * I refactored the original/base repo so things would look more consistent throughout -- moving around styling, componenents
-  * I went ahead and removed the original context provider in favor of redux to separate concerns a bit more
-  * Testing - I've only added simple snapshot testing for components and containers; I would also like to have reducer/actions tests if time permitted.
-  * I've also added a few touches such as skeletons if the web app runs on a slower network, basic error handling, and a 404.
+  * `Refactoring` - I refactored the original/base repo so things would look more consistent throughout -- moving around styling, componenents
+  * `Redux` - I went ahead and removed the original context provider in favor of redux to separate concerns a bit more
+  * `Testing` - I've only added simple snapshot testing for components and containers; I would also like to have reducer/actions tests if time permitted.
+  * `Misc Touch-ups` - I've also added a few touches such as skeletons if the web app runs on a slower network, basic error handling, and a 404.
