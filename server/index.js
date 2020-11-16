@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const morgan = require('morgan');
 const { db } = require('./models');
-const { logger, log } = require('./logger');
+const { logger } = require('./logger');
 const app = express();
 const port = process.env.PORT || 8080;
 
