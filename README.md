@@ -28,7 +28,7 @@ This repo contains the source code to do the following tasks:
 
 ### Running locally
 
-There are a couple commands to choose from within the `package.json` after installing dependencies
+There are a couple commands to choose from within the root `package.json` after installing dependencies
 
 * `yarn server` runs a nodemon'd version of the server locally from the /server dir
   * `localhost:8080` - you can also hit this url directly since there's no auth to test apis e.g. http://localhost:8080/api/profiles
