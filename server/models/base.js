@@ -3,7 +3,6 @@ const { log } = require('../logger');
 class SimpleCache {
   constructor(timeToLive = 1) {
     // cache ttl in minutes
-    this.url = '';
     this.millisecondsToLive = timeToLive * 60 * 1000;
     this.cache = null;
     this.getData = this.getData.bind(this);
